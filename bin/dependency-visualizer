@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+namespace Hirokinoue\DependencyVisualizer;
+
+fwrite(STDOUT, 'TBD' . PHP_EOL);
+exit(0);
+
