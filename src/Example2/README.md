@@ -1,0 +1,2 @@
+Example1のNameNodesExtractorとの違いはNameノードの代わりにFullyQualifiedノードでフィルターをかけていること。  
+それに伴いテストケースに差異がある。
