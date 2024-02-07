@@ -69,7 +69,7 @@ final class NameNodesExtractorTest extends TestCase
             'インポート' => [
                 'UseUseNode/FooBar', ['Foo\Bar'],
             ],
-            'Classの宣言_継承_実装あり' => [
+            'クラスの宣言_継承_実装あり' => [
                 'ClassNode/FooExtendsImplements', ['Bar', 'Baz'],
             ],
             '関数の宣言_戻り値の型あり' => [
@@ -114,7 +114,7 @@ final class NameNodesExtractorTest extends TestCase
     public function dataNameノードが存在しないこと(): array
     {
         return [
-            'Classの宣言' => [
+            'クラスの宣言' => [
                 'ClassNode/Foo',
             ],
             '関数の宣言_戻り値の型なし' => [
@@ -165,7 +165,7 @@ final class NameNodesExtractorTest extends TestCase
                     'Baz\Foo',
                 ],
             ],
-            'useの宣言_グループ化された宣言' => [
+            'インポート_グループ化された宣言' => [
                 'GroupUseNode/Foo',
                 GroupUse::class, [
                     'Foo',
