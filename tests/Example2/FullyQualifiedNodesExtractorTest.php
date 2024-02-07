@@ -55,7 +55,7 @@ final class FullyQualifiedNodesExtractorTest extends TestCase
             '関数コール_関数名が式じゃない' => [
                 'FuncCallNode/NameIsName', ['phpversion'],
             ],
-            'Classの宣言_継承_実装あり' => [
+            'クラスの宣言_継承_実装あり' => [
                 'ClassNode/FooExtendsImplements', ['Bar', 'Baz'],
             ],
             '関数の宣言_戻り値の型あり' => [
@@ -100,7 +100,7 @@ final class FullyQualifiedNodesExtractorTest extends TestCase
     public function dataFullyQualifiedノードが存在しないこと(): array
     {
         return [
-            'Classの宣言' => [
+            'クラスの宣言' => [
                 'ClassNode/Foo',
             ],
             '関数の宣言_戻り値の型なし' => [
