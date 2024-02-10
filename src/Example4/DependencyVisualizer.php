@@ -2,13 +2,10 @@
 
 namespace Hirokinoue\DependencyVisualizer\Example4;
 
-use InvalidArgumentException;
 use PhpParser\Node\Stmt;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor\NameResolver;
 use PhpParser\ParserFactory;
-
-use function file_get_contents;
 
 final class DependencyVisualizer
 {
@@ -25,12 +22,12 @@ final class DependencyVisualizer
     }
 
     public static function create(string $filePath): self {
-        $fileContent = file_get_contents($filePath);
+        $fileContent = \file_get_contents($filePath);
         $code = ($fileContent === false) ? '' : $fileContent;
         $parser = (new ParserFactory())->createForHostVersion();
         $stmts = $parser->parse($code);
         if ($stmts === null) {
-            throw new InvalidArgumentException('No ast found.');
+            throw new \InvalidArgumentException('No ast found.');
         }
         return new self($stmts);
     }

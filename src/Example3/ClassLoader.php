@@ -3,7 +3,6 @@
 namespace Hirokinoue\DependencyVisualizer\Example3;
 
 use ReflectionClass;
-use ReflectionException;
 
 final class ClassLoader
 {
@@ -23,7 +22,7 @@ final class ClassLoader
             /** @phpstan-ignore-next-line */
             $reflector = new ReflectionClass($qualifiedName);
         }
-        catch (ReflectionException $r) {
+        catch (\ReflectionException $r) {
             // $qualifiedNameがクラス名ではないケースやクラスのファイルはあるが中身が無いケース
             return new self('', '');
         }
@@ -41,7 +40,7 @@ final class ClassLoader
             return '';
         }
 
-        $content = file_get_contents($path);
+        $content = \file_get_contents($path);
         if ($content === false) {
             return '';
         }
