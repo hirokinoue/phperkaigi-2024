@@ -1,8 +1,8 @@
-container_name := dependency-visualizer-container
-image_name := dependency-visualizer-image
+container_name := phperkaigi-2024-container
+image_name := phperkaigi-2024-image
 
 host_directory := $(shell pwd)
-container_directory := /usr/local/dependency-visualizer
+container_directory := /usr/local/phperkaigi-2024
 
 image_exists := $(shell docker images --filter "reference=$(image_name)" --format "{{.Repository}}")
 container_exists := $(shell docker ps -a --filter "name=$(container_name)" --format "{{.Names}}")

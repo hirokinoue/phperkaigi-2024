@@ -1,6 +1,6 @@
 {
-    "name": "hirokinoue/dependency-visualizer",
-    "description": "Visualizes dependency among classes.",
+    "name": "hirokinoue/phperkaigi-2024",
+    "description": "Sample codes for PHPerKaigi 2024.",
     "license": "MIT",
     "autoload": {
         "psr-4": {

@@ -1,16 +1,15 @@
-# Dependency Visualizer
-[![phpunit](https://github.com/hirokinoue/dependency-visualizer/actions/workflows/phpunit.yml/badge.svg)](https://github.com/hirokinoue/dependency-visualizer/actions/workflows/phpunit.yml)
+# リポジトリの概要
+[![phpunit](https://github.com/hirokinoue/phperkaigi-2024/actions/workflows/phpunit.yml/badge.svg)](https://github.com/hirokinoue/phperkaigi-2024/actions/workflows/phpunit.yml)
 
-## Overview
-Dependency Visualizer is a tool that visualizes dependency among classes.
+PHPerKaigi 2024
+『PHP Parserで学ぶPHPと静的解析 』用サンプルコード
 
-# Usage
-TBD
+## Example4の実行方法
+```
+./bin/dependency-visualizer path/to/taget.php
+```
 
-# Example
-TBD
-
-# Development
+# 開発環境
 ## Run docker
 ```
 make run
@@ -20,9 +19,3 @@ make run
 ```
 make clean
 ```
-
-## Execute Dependency Visualizer
-TBD
-
-## Build phar file
-https://github.com/box-project/box/tree/main?tab=readme-ov-file#usage
