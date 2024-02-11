@@ -29,6 +29,6 @@ final class ClassLikeNodeFinderTest extends TestCase
         $className = $sut->classLikeName();
 
         // then
-        $this->assertSame('Hirokinoue\DependencyVisualizer\Tests\Example4\data\Foo', $className);
+        $this->assertSame('\Hirokinoue\DependencyVisualizer\Tests\Example4\data\Foo', $className);
     }
 }

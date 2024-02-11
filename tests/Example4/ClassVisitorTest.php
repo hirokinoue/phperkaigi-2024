@@ -28,12 +28,12 @@ final class ClassVisitorTest extends TestCase
         $nodeTraverser->addVisitor(new ClassVisitor($diagramUnit = new DiagramUnit('RootClass')));
 
         $expected = new DiagramUnit('RootClass');
-        $baz = new DiagramUnit('Hirokinoue\DependencyVisualizer\Tests\Example4\data\Baz');
-        $baz->push(new DiagramUnit('Hirokinoue\DependencyVisualizer\Tests\Example4\data\Qux'));
-        $expected->push(new DiagramUnit('Error'));
-        $expected->push(new DiagramUnit('Hirokinoue\DependencyVisualizer\Tests\Example4\data\Bar'));
+        $baz = new DiagramUnit('\Hirokinoue\DependencyVisualizer\Tests\Example4\data\Baz');
+        $baz->push(new DiagramUnit('\Hirokinoue\DependencyVisualizer\Tests\Example4\data\Qux'));
+        $expected->push(new DiagramUnit('\Error'));
+        $expected->push(new DiagramUnit('\Hirokinoue\DependencyVisualizer\Tests\Example4\data\Bar'));
         $expected->push($baz);
-        $expected->push(new DiagramUnit('stdClass'));
+        $expected->push(new DiagramUnit('\stdClass'));
 
         // when
         $nodeTraverser->traverse($stmts);

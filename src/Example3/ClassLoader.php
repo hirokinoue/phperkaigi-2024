@@ -2,25 +2,26 @@
 
 namespace Hirokinoue\DependencyVisualizer\Example3;
 
+use PhpParser\Node\Name\FullyQualified;
 use ReflectionClass;
 
 final class ClassLoader
 {
-    private string $qualifiedClassName;
+    private string $fullyQualified;
     private string $content;
 
-    private function __construct(string $qualifiedClassName, string $content) {
-        $this->qualifiedClassName = $qualifiedClassName;
+    private function __construct(string $fullyQualified, string $content) {
+        $this->fullyQualified = $fullyQualified;
         $this->content = $content;
     }
 
-    public static function create(string $qualifiedName): self
+    public static function create(FullyQualified $fullyQualified): self
     {
         try {
             // ReflectionClassにかけてみないと存在するクラスなのかどうかがわからないため
             // $qualifiedNameがclass-stringであることを保証できない
             /** @phpstan-ignore-next-line */
-            $reflector = new ReflectionClass($qualifiedName);
+            $reflector = new ReflectionClass($fullyQualified->toCodeString());
         }
         catch (\ReflectionException $r) {
             // $qualifiedNameがクラス名ではないケースやクラスのファイルはあるが中身が無いケース
@@ -28,11 +29,10 @@ final class ClassLoader
         }
 
         $path = ($reflector->getFileName() === false) ? '' : $reflector->getFileName();
-        $qualifiedClassName = empty($reflector->name) ? '' : $reflector->name;
         $code = self::readFile($path);
 
         // 定義済みクラスは$codeが空
-        return new self($qualifiedClassName, $code);
+        return new self($fullyQualified->toCodeString(), $code);
     }
 
     private static function readFile(string $path): string {
@@ -49,7 +49,7 @@ final class ClassLoader
     }
 
     public function className(): string {
-        return $this->qualifiedClassName;
+        return $this->fullyQualified;
     }
 
     public function content(): string {
@@ -57,7 +57,7 @@ final class ClassLoader
     }
 
     public function isClass(): bool {
-        return $this->qualifiedClassName !== '';
+        return $this->fullyQualified !== '';
     }
 
     public function codeNotFound(): bool {

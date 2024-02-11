@@ -32,17 +32,17 @@ final class DependencyVisualizerTest extends TestCase
     public function data分析結果をテキスト形式で出力できること(): array
     {
         $rootIsClass = <<<RESULT
-Hirokinoue\DependencyVisualizer\Tests\Example4\data\Foo
-  Hirokinoue\DependencyVisualizer\Tests\Example4\data\Bar
-  Hirokinoue\DependencyVisualizer\Tests\Example4\data\Baz
-    Hirokinoue\DependencyVisualizer\Tests\Example4\data\Qux
+\Hirokinoue\DependencyVisualizer\Tests\Example4\data\Foo
+  \Hirokinoue\DependencyVisualizer\Tests\Example4\data\Bar
+  \Hirokinoue\DependencyVisualizer\Tests\Example4\data\Baz
+    \Hirokinoue\DependencyVisualizer\Tests\Example4\data\Qux
 
 RESULT;
         $rootIsNotClass = <<<RESULT
 root
-  Hirokinoue\DependencyVisualizer\Tests\Example4\data\Bar
-  Hirokinoue\DependencyVisualizer\Tests\Example4\data\Baz
-    Hirokinoue\DependencyVisualizer\Tests\Example4\data\Qux
+  \Hirokinoue\DependencyVisualizer\Tests\Example4\data\Bar
+  \Hirokinoue\DependencyVisualizer\Tests\Example4\data\Baz
+    \Hirokinoue\DependencyVisualizer\Tests\Example4\data\Qux
 
 RESULT;
         return [

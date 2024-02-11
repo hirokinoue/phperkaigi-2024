@@ -23,7 +23,7 @@ final class ClassVisitor extends NodeVisitorAbstract
             return $node;
         }
 
-        $classFile = ClassLoader::create($node->toCodeString());
+        $classFile = ClassLoader::create($node);
         if ($classFile->isClass()) {
             $subClass = new DiagramUnit($classFile->className());
             $this->diagramUnit->push($subClass);
