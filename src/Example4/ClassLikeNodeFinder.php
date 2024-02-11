@@ -5,6 +5,7 @@ namespace Hirokinoue\DependencyVisualizer\Example4;
 use PhpParser\Node;
 use PhpParser\NodeFinder;
 use PhpParser\NodeTraverser;
+use PhpParser\Node\Name\FullyQualified;
 use PhpParser\Node\Stmt\ClassLike;
 use PhpParser\NodeVisitor\NameResolver;
 
@@ -34,7 +35,7 @@ class ClassLikeNodeFinder
 
     public function classLikeName(): string {
         if ($this->node->namespacedName !== null) {
-            return $this->node->namespacedName->name;
+            return (new FullyQualified($this->node->namespacedName->name))->toCodeString();
         }
         if ($this->node->name === null) {
             return '';

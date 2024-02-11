@@ -4,14 +4,14 @@ namespace Hirokinoue\DependencyVisualizer\Example4;
 
 final class DiagramUnit
 {
-    private string $className;
+    private string $fullyQualifiedClassName;
     /**
      * @var DiagramUnit[] $classesDirectlyDependsOn
      */
     private array $classesDirectlyDependsOn = [];
 
-    public function __construct(string $className) {
-        $this->className = $className;
+    public function __construct(string $fullyQualifiedClassName) {
+        $this->fullyQualifiedClassName = $fullyQualifiedClassName;
     }
 
     public function push(DiagramUnit $other): void
@@ -20,7 +20,7 @@ final class DiagramUnit
     }
 
     public function className(): string {
-        return $this->className;
+        return $this->fullyQualifiedClassName;
     }
 
     /**
