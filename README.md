@@ -8,14 +8,3 @@ PHPerKaigi 2024
 ```
 ./bin/dependency-visualizer path/to/taget.php
 ```
-
-# 開発環境
-## Run docker
-```
-make run
-```
-
-## Clear docker
-```
-make clean
-```
